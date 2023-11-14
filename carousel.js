@@ -57,8 +57,8 @@ while (x < dashLibrary.link.length) {
 }
 
 console.log(dashLibrary.name[0], dashLibrary.link.length);
-console.log(...htmlButtonOutput);
-console.log(...htmlDashOutput);
+// console.log(...htmlButtonOutput);
+// console.log(...htmlDashOutput);
 
 
 // const button_1 = document.querySelector('.btn-1');
