@@ -224,7 +224,7 @@ button b {
 }
 
 #home-page {
-  position: fixed;
+  position: absolute;
   text-align: center;
   margin-left: 5vh;
   margin-top: 0.9vh;
@@ -310,14 +310,18 @@ input[type='checkbox'] {
 }
 /* Dashboard selector collapsible */
 
-.dash-page {
-  position: fixed;
+.dash-container {
+  position: flex;
   width: 100%;
-  height: 92.5%;
-  z-index: auto;
+  height: 100vb;
+  z-index: -1;
 }
 
-
+.dash-page {
+  width: 100%;
+  height: 100%;
+  /* z-index: auto; */
+}
 
 
 
