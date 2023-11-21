@@ -58,7 +58,9 @@ while (x < dashLibrary.link.length) {
   x++;
 }
 
-console.log(dashLibrary.name[0], dashLibrary.link.length, htmlButtonOutput);
+let spreadHtml = `${htmlButtonOutput.join('')}`;
+
+console.log(spreadHtml);
 
 function createTagElement(tagName, htmlTag) {
   class CustomElement extends HTMLElement {
@@ -69,7 +71,7 @@ function createTagElement(tagName, htmlTag) {
   customElements.define(tagName, CustomElement);
 }
 
-createTagElement('dash-btn', htmlButtonOutput);
+createTagElement('dash-btn', spreadHtml);
 
 
 // console.log(...htmlButtonOutput);
