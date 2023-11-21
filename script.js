@@ -1,4 +1,4 @@
-function createTagElement(tagName, htmlTag) {
+/* function createTagElement(tagName, htmlTag) {
   class CustomElement extends HTMLElement {
     connectedCallback() {
       this.innerHTML = htmlTag;
@@ -51,22 +51,8 @@ let headerTag = `
       </div>
     </div>
   </div>
+  <script src="carousel.js"></script>
 </header>
 `;
 
-createTagElement('my-header', headerTag);
-
-/* let dashTag = ` <div class="container">
-<iframe class = "dash-page" title="dash-produtos" src="" frameborder="0" allowFullScreen="true"></iframe>
-</div>`; */
-
-
-// createTagElement('dash-tag', dashTag);
-
-// class MyHeader extends HTMLElement {
-//   connectedCallback() {
-//     this.innerHTML = headerTag;
-//   }
-// }
-
-// MyHeader = createTagElement(MyHeader, headerTag);
+createTagElement('my-header', headerTag); */

@@ -40,6 +40,11 @@ let dashLibrary = {
     , 'https://app.powerbi.com/view?r=eyJrIjoiYWE3ZjUwNGMtMmM3ZS00YjM1LWI4YWUtZTNkNjc1NWVjMmM4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
   ]
   , image:['/images/char 11.png', '/images/char 11.png', '/images/char 11.png']
+};
+
+const changeDashboard = function (newLink) {
+  let dashLink = document.querySelector(".dash-page");
+  dashLink.setAttribute("src", newLink);
 }
 
 let htmlButtonOutput = [];
@@ -48,15 +53,25 @@ let htmlDashOutput = [];
 let x = 0;
 
 while (x < dashLibrary.link.length) {
-  let dashboardButton = `<a class="item current-item" href="/dashboard.html"><button class = 'btn-${x}'><img src="${dashLibrary.image[x]}"><b>${dashLibrary.name[x]}</b></button></a>`;
-  // let dashboardIframe = `<iframe class = "dash-page" title="dash-produtos" src="${dashLibrary.link[x]}" frameborder="0" allowFullScreen="true"></iframe>`;
+  let dashboardButton = `<button class="item current-item" onclick="changeDashboard('${dashLibrary.link[x]}')"><img src="${dashLibrary.image[x]}"><b>${dashLibrary.name[x]}</b></button>`;
   htmlButtonOutput.push(dashboardButton);
-  // htmlDashOutput.push(dashboardIframe);
-
   x++;
 }
 
-console.log(dashLibrary.name[0], dashLibrary.link.length);
+console.log(dashLibrary.name[0], dashLibrary.link.length, htmlButtonOutput);
+
+function createTagElement(tagName, htmlTag) {
+  class CustomElement extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = htmlTag;
+    }
+  }
+  customElements.define(tagName, CustomElement);
+}
+
+createTagElement('dash-btn', htmlButtonOutput);
+
+
 // console.log(...htmlButtonOutput);
 // console.log(...htmlDashOutput);
 
@@ -68,3 +83,6 @@ console.log(dashLibrary.name[0], dashLibrary.link.length);
 
 // button_1.addEventListener('click', logging);
 // button_2.addEventListener('click', logging);
+
+// let dashboardIframe = `<iframe class = "dash-page" title="dash-produtos" src="${dashLibrary.link[x]}" frameborder="0" allowFullScreen="true"></iframe>`;
+// htmlDashOutput.push(dashboardIframe);

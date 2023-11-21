@@ -85,9 +85,9 @@ button {
 
 button img {
   width: 60%;
-  height: 60%;
+  height: auto;
   border: 3px solid;
-  border-radius: 100px;
+  border-radius: 100vh;
   background-color: white;
 }
 
