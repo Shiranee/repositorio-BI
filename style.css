@@ -30,6 +30,36 @@ a {
   color: inherit;
   display: inline-block;
 }
+
+button {
+  display: inline-block;
+  width: 100px;
+  height: auto;
+  text-align: center;
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+button img {
+  width: 60%;
+  height: auto;
+  border: 3px solid;
+  border-radius: 100vh;
+  background-color: white;
+}
+
+button b {
+  display: block;
+  text-align: bottom;
+  margin-top: 0.2vh;
+}
+
+.bottomLine {
+  border-bottom: 3px solid;
+}
 /* Pages Settings */
 
 /* Main Page header */
@@ -62,6 +92,7 @@ a {
   margin-left: 17%;
   margin-right: 17%;
   max-width: 200vh;
+  border-bottom: 3px solid;
 }
 
 .dash-selector h2 {
@@ -70,104 +101,10 @@ a {
   border-bottom: 3.5px solid;
   font-size: 20px;
 }
-
-button {
-  display: inline-block;
-  width: 100px;
-  height: auto;
-  text-align: center;
-  border: none;
-  background-color: inherit;
-  color: inherit;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-}
-
-button img {
-  width: 60%;
-  height: auto;
-  border: 3px solid;
-  border-radius: 100vh;
-  background-color: white;
-}
-
-button b {
-  display: block;
-  text-align: bottom;
-  margin-top: 0.2vh;
-}
 /* Main page dashboard selector */
 
 /* Button Gallery */
-.container {
-  position: relative;
-  padding: 15px;
-  /* max-width: 100vh; */
-  height: auto;
-  margin: 0 auto;
-  border-bottom: 3.5px solid;
-}
 
-.gallery-wrapper {
-  overflow-x: auto;
-}
-
-.arrow-left,
-.arrow-right {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: auto;
-  bottom: 0;
-  font-size: 20px;
-  line-height: 100px;
-  width: 40px;
-  color: #fff;
-  transition: all 600ms ease-in-out;
-  background: linear-gradient(to left, transparent 0%, black 200%);
-  /* opacity: 0.1; */
-  cursor: pointer;
-  border: none;
-}
-
-.arrow-left:hover,
-.arrow-right:hover {
-  opacity: 1;
-}
-
-.arrow-right {
-  right: 0;
-  left: auto;
-  text-align: right;
-  background: linear-gradient(to right, transparent 0%, black 200%);
-}
-
-.gallery {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 15px;
-}
-
-.item {
-  /* width: 250px; */
-  /* height: 250px; */
-  flex-shrink: 0;
-  /* transition: all 600ms ease-in-out; */
-  opacity: 0.5;
-}
-
-.current-item {
-  opacity: 1;
-}
-
-.gallery-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
-.gallery-wrapper {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 /* Button Gallery */
 
 /* Main Page Content Table */
@@ -325,18 +262,57 @@ input[type='checkbox'] {
 
 
 
-/* .buttons {
-  display: inline-block;
-  width: auto;
-  text-align: center;
-  margin-left: 17%;
-  margin-right: 17%;
-  border-bottom: 3.5px solid;
-  overflow: auto;
-  white-space: nowrap;
-} */
-
-/* .dash-container {
-  overflow: hidden;
+#wrapper {
   width: 100%;
-} */
+  /* max-width: 964px; */
+  position: relative;
+}
+
+#carousel {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+#carousel::-webkit-scrollbar {
+  height: 0;
+}
+
+#prev,
+#next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: white;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+#prev {
+  width: 2.5vw;
+  height: auto;
+  top: 35%;
+  left: 0;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+#next {
+  width: 2.5vw;
+  height: auto;
+  top: 35%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+#content {
+  display: grid;
+  grid-gap: 19px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}

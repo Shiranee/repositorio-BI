@@ -1,37 +1,3 @@
-const controls = document.querySelectorAll(".control");
-let currentItem = 0;
-const items = document.querySelectorAll(".item");
-const maxItems = items.length;
-
-controls.forEach((control) => {
-  control.addEventListener("click", (e) => {
-    isLeft = e.target.classList.contains("arrow-left");
-
-    if (isLeft) {
-      currentItem -= 1;
-    } else {
-      currentItem += 1;
-    }
-
-    if (currentItem >= maxItems) {
-      currentItem = 0;
-    }
-
-    if (currentItem < 0) {
-      currentItem = maxItems - 1;
-    }
-
-    items.forEach((item) => item.classList.remove("current-item"));
-
-    items[currentItem].scrollIntoView({
-      behavior: "smooth",
-      inline: "center"
-    });
-
-    items[currentItem].classList.add("current-item");
-  });
-});
-
 let dashLibrary = {
   name: ['placeHolder1', 'placeHolder2', 'placeHolder3']
   , link: [
@@ -53,38 +19,29 @@ let htmlDashOutput = [];
 let x = 0;
 
 while (x < dashLibrary.link.length) {
-  let dashboardButton = `<button class="item current-item" onclick="changeDashboard('${dashLibrary.link[x]}')"><img src="${dashLibrary.image[x]}"><b>${dashLibrary.name[x]}</b></button>`;
-  htmlButtonOutput.push(dashboardButton);
+  let carouselContent = document.querySelector('#content');
+  let newButton = document.createElement("button");
+
+  // Set the class attribute
+  newButton.setAttribute("class", "item");
+
+  // Set the onclick attribute
+  newButton.setAttribute("onclick", `changeDashboard('${dashLibrary.link[x]}')`);
+
+  // Create an image element and set its src attribute
+  let imgElement = document.createElement("img");
+  imgElement.setAttribute("src", `${dashLibrary.image[x]}`);
+
+  // Create a bold element for "Placeholder 1"
+  let boldElement = document.createElement("b");
+  boldElement.appendChild(document.createTextNode(`${dashLibrary.name[x]}`));
+
+  // Append the image and bold elements to the button
+  newButton.appendChild(imgElement);
+  newButton.appendChild(boldElement);
+
+  // Append the button to the body or another container element
+  carouselContent.appendChild(newButton);
+  carouselContent.appendChild(newButton);
   x++;
 }
-
-let spreadHtml = `${htmlButtonOutput.join('')}`;
-
-console.log(spreadHtml);
-
-function createTagElement(tagName, htmlTag) {
-  class CustomElement extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = htmlTag;
-    }
-  }
-  customElements.define(tagName, CustomElement);
-}
-
-createTagElement('dash-btn', spreadHtml);
-
-
-// console.log(...htmlButtonOutput);
-// console.log(...htmlDashOutput);
-
-
-// const button_1 = document.querySelector('.btn-1');
-// const button_2 = document.querySelector('.btn-2');
-
-// function logging() {console.log('btn clicked')};
-
-// button_1.addEventListener('click', logging);
-// button_2.addEventListener('click', logging);
-
-// let dashboardIframe = `<iframe class = "dash-page" title="dash-produtos" src="${dashLibrary.link[x]}" frameborder="0" allowFullScreen="true"></iframe>`;
-// htmlDashOutput.push(dashboardIframe);

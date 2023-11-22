@@ -26,23 +26,40 @@
     <div class="collapsible-content">
       <div class="content-inner">
         <div class="dashboard-selector">  
-          <div class="container">
-          <button class="arrow-left control" aria-label="Previous image">◀</button>
-          <button class="arrow-right control" aria-label="Next Image">▶</button>
-          <div class="gallery-wrapper">
-            <div class="gallery">
-                <!-- <button class="item current-item" onclick="changeDashboard('https://app.powerbi.com/view?r=eyJrIjoiMjgxYzA2ZTAtY2EwMi00YjhkLWFiN2UtZmEzZjBiYTY4MzA4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9')"><img src="/images/char 11.png"><b>Placeholder 1</b></button>
-                <button class="item current-item" onclick="changeDashboard('https://app.powerbi.com/view?r=eyJrIjoiOTAxZTQyYWMtYTBjNS00YzMxLWFkYWUtMGQ0ZWVmYWJhYWFhIiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9')"><img src="/images/char 11.png"><b>Placeholder 2</b></button>
-                <button class="item current-item" onclick="changeDashboard('https://app.powerbi.com/view?r=eyJrIjoiYWE3ZjUwNGMtMmM3ZS00YjM1LWI4YWUtZTNkNjc1NWVjMmM4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9')"><img src="/images/char 11.png"><b>Placeholder 3</b></button> -->
-                <dash-btn></dash-btn>
+
+          <div id="wrapper">
+            <div id="carousel">
+              <div id="content">
               </div>
             </div>
+            <button id="prev">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path fill="none" d="M0 0h24v24H0V0z" />
+                <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+              </svg>
+            </button>
+            <button id="next">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path fill="none" d="M0 0h24v24H0V0z" />
+                <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+              </svg>
+            </button>
           </div>
+
         </div>
       </div>
     </div>
   </div>
-  <script src="carousel.js"></script>
 </header>
 
 <body>
@@ -55,6 +72,13 @@
   <!-- <iframe title="Report Section" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOTAxZTQyYWMtYTBjNS00YzMxLWFkYWUtMGQ0ZWVmYWJhYWFhIiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9" frameborder="0" allowFullScreen="true"></iframe> -->
   <!-- <iframe title="Report Section" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYWE3ZjUwNGMtMmM3ZS00YjM1LWI4YWUtZTNkNjc1NWVjMmM4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9" frameborder="0" allowFullScreen="true"></iframe> -->
 
+<!-- <button class="item current-item" onclick="changeDashboard('https://app.powerbi.com/view?r=eyJrIjoiMjgxYzA2ZTAtY2EwMi00YjhkLWFiN2UtZmEzZjBiYTY4MzA4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9')"><img src="/images/char 11.png"><b>Placeholder 1</b></button>
+<button class="item current-item" onclick="changeDashboard('https://app.powerbi.com/view?r=eyJrIjoiOTAxZTQyYWMtYTBjNS00YzMxLWFkYWUtMGQ0ZWVmYWJhYWFhIiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9')"><img src="/images/char 11.png"><b>Placeholder 2</b></button>
+<button class="item current-item" onclick="changeDashboard('https://app.powerbi.com/view?r=eyJrIjoiYWE3ZjUwNGMtMmM3ZS00YjM1LWI4YWUtZTNkNjc1NWVjMmM4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9')"><img src="/images/char 11.png"><b>Placeholder 3</b></button> -->
+
+
 </body>
+<script src="carousel.js"></script>
+<script src="script.js"></script>
 
 </html>
