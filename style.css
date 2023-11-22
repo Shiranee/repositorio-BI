@@ -41,6 +41,7 @@ button {
   color: inherit;
   margin-top: 2vh;
   margin-bottom: 2vh;
+  word-wrap: break-word;
 }
 
 button img {
@@ -55,6 +56,7 @@ button b {
   display: block;
   text-align: bottom;
   margin-top: 0.2vh;
+  overflow-wrap: break-word;
 }
 
 .bottomLine {
