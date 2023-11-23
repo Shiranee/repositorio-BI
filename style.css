@@ -23,7 +23,9 @@
 }
 
 body {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 a {
@@ -176,7 +178,7 @@ input[type='checkbox'] {
 }
 
 .wrap-collabsible {
-  margin: 0.2rem 0;
+  /* margin: 0.2rem 0; */
 }
 
 .lbl-toggle {
@@ -250,19 +252,17 @@ input[type='checkbox'] {
 /* Dashboard selector collapsible */
 
 .dash-container {
-  position: flex;
-  width: 100%;
-  height: 100vb;
-  z-index: -1;
+  position: relative;
+  flex: 1;
 }
 
 .dash-page {
-  width: 100%;
-  height: 100%;
-  /* z-index: auto; */
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
 }
-
-
 
 #wrapper {
   width: 100%;
