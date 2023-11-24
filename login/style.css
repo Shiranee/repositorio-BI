@@ -10,6 +10,14 @@
   --red: #CF3C3F;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+  justify-content: center;
+}
+
 .login {
   display: flex;
   flex-direction: column;
