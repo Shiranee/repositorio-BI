@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="br">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <script src="script.js"></script> -->
-      <title>Repositório BI</title>
-    <link rel="shortcut icon" href="images/icon.jpg">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="carousel.js" defer></script>
+    <script src="script.js" defer></script>
+    <title>Repositório BI</title>
+  <link rel="shortcut icon" href="images/icon.jpg">
+</head>
 
+<body class="page-theme">
   <header class="main-header">
     <div class="logo-live">
         <svg viewBox="109.123 19.522 72.412 32.507">
@@ -35,66 +37,51 @@
     <img src="/images/header.png">
   </header>
 
-  <body class="page-theme">
+  <div class="dash-selector">
+    <h2>Dashboards</h2>
+    <div id="wrapper">
+      <div id="carousel">
+        <div id="content">
+          <a class="item" href="/dashboard.html"><button class = 'btn-1'><img src="/images/char 11.png"><b>E-commerce</b></button></a>
+          <a class="item" href="/dashboard.html"><button class = 'btn-2'><img src="/images/char 11.png"><b>E-commerce</b></button></a>
+          <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b><span class="nowrap">dashboard E-commerce</span></b></button></a>
 
-    <div class="dash-selector">
-      <h2>Dashboards</h2>
-      <div id="wrapper">
-        <div id="carousel">
-          <div id="content">
-            <a class="item" href="/dashboard.html"><button class = 'btn-1'><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button class = 'btn-2'><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-            <a class="item" href="/dashboard.html"><button><img src="/images/char 11.png"><b>E-commerce</b></button></a>
-          </div>
         </div>
-        <button id="prev">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path fill="none" d="M0 0h24v24H0V0z" />
-            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-          </svg>
-        </button>
-        <button id="next">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path fill="none" d="M0 0h24v24H0V0z" />
-            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-          </svg>
-        </button>
       </div>
-      
+      <button id="prev">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path fill="none" d="M0 0h24v24H0V0z" />
+          <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+        </svg>
+      </button>
+      <button id="next">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path fill="none" d="M0 0h24v24H0V0z" />
+          <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+        </svg>
+      </button>
     </div>
+    
+  </div>
 
-    <div id="title-1">
-      <h1> Repositório LIVE! (BI) </h1>
-    </div>
+  <div id="title-1">
+    <h1> Repositório LIVE! (BI) </h1>
+  </div>
 
-    <div class="row">
-      <div class="column left">
-        <h2>column</h2>
-        <h2>LIVE!</h2>
+  <div class="row">
+    <div class="column left">
+      <h2>column</h2>
+      <h2>LIVE!</h2>
 <li>Regras de Negócio</li>
 <li>LIVE! RUN</li>
 <li>LIVE! RUN 2022</li>
@@ -107,22 +94,20 @@
 <li>Resultados das Listagem de Clientes Exclusivos E-commerce 2022</li>
 <li>ANÁLISE DE LOJA STUDIO - Campo Mourão</li>
 
-        <div id='template'></div>
+      <div id='template'></div>
 
-      </div>
-      <div class="column middle">
-        <h2>Column 2</h2>
-        <p>Data..</p>
-      </div>
-      <div class="column right">
-        <h2>Column 3</h2>
-        <p>Data..</p>
-      </div>
     </div>
-    
-  </body>
-  <script src="carousel.js"></script>
-  <script src="script.js"></script>
+    <div class="column middle">
+      <h2>Column 2</h2>
+      <p>Data..</p>
+    </div>
+    <div class="column right">
+      <h2>Column 3</h2>
+      <p>Data..</p>
+    </div>
+  </div>
+  
+</body>
 
 </html>
 
