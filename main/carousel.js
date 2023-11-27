@@ -5,6 +5,8 @@ const changeDashboard = function (newLink) {
 
 let dashLibrary = {
   name: ['Dashboard E-commerce', 'Personal Shoppers E-commerce', 'Produto E-Commerce', 'Acompanhamento Influencers', 'Supervisão Varejo', 'Diretoria Varejo', 'Ranking Outlets', 'Ranking Lps', 'Ranking Studios', 'Ranking Franquias']
+  , image:['/images/char 11.png', '/images/char 11.png', '/images/char 11.png']
+  , circleTrough:[true, true, true]
   , link: [
       'https://app.powerbi.com/view?r=eyJrIjoiMjgxYzA2ZTAtY2EwMi00YjhkLWFiN2UtZmEzZjBiYTY4MzA4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
     , 'https://app.powerbi.com/view?r=eyJrIjoiOTAxZTQyYWMtYTBjNS00YzMxLWFkYWUtMGQ0ZWVmYWJhYWFhIiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
@@ -17,7 +19,6 @@ let dashLibrary = {
     // , 'https://app.powerbi.com/view?r=eyJrIjoiYWE3ZjUwNGMtMmM3ZS00YjM1LWI4YWUtZTNkNjc1NWVjMmM4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
     // , 'https://app.powerbi.com/view?r=eyJrIjoiMjgxYzA2ZTAtY2EwMi00YjhkLWFiN2UtZmEzZjBiYTY4MzA4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
  ]
-  , image:['/images/char 11.png', '/images/char 11.png', '/images/char 11.png']
 };
 
 let htmlButtonOutput = [];
@@ -53,31 +54,32 @@ while (x < dashLibrary.link.length) {
 
 let stopLoop = false;
 
-// Add a click event listener to the document body
-document.body.addEventListener('click', (event) => {
-  // Check if the clicked element is a button
-  if (event.target.tagName === 'BUTTON') {
+let btns = document.querySelectorAll('.item');
+
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
     stopLoop = true;
-    console.log(stopLoop);
-  }
+  });
 });
 
 async function updateDashLinks() {
-  let x = 0;
+  x = 0;
   let loopDashLink = document.querySelector('.dash-page');
 
-  while (true && !stopLoop) {
+  while (!stopLoop) {
     if(x === dashLibrary.link.length){
       x = 0;
-    }
+    } else if (!dashLibrary.circleTrough[x]) {
+      x++;
+    } else {
       loopDashLink.setAttribute("src", `${dashLibrary.link[x]}`);
       
       // Use a delay function (in this case, using setTimeout)
       await new Promise(resolve => setTimeout(resolve, 5000));
 
       x++;
+    }
   }
 }
-
 // Call the function to start the loop
 updateDashLinks();
