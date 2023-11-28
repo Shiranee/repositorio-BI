@@ -324,13 +324,12 @@ height: 100%;
   align-items: flex-start;
 }
 
-.dot {
-  width: 100px;
-  height: auto;
-  font-weight: bold;
+#countdown {
+  width: 20vh;
   position: absolute;
   text-align: center;
-  margin-left: 50%;
-  margin-top: 45%;
-  z-index: 1;
+  white-space: pre-line;
+  font-weight: bold;
+  right: 0vh;
+  margin-top: 0.5%;
 }

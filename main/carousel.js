@@ -2,7 +2,7 @@ let dashLibrary = {
   name: ['Dashboard E-commerce', 'Personal Shoppers E-commerce', 'Produto E-Commerce', 'Acompanhamento Influencers', 'Supervisão Varejo', 'Diretoria Varejo', 'Ranking Outlets', 'Ranking Lps', 'Ranking Studios', 'Ranking Franquias']
 , image:['/images/char 11.png', '/images/char 11.png', '/images/char 11.png']
 , circleTrough:[true, true, true]
-, circleTime: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
+, circleTime: [5000, 5000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 , link: [
     'https://app.powerbi.com/view?r=eyJrIjoiMjgxYzA2ZTAtY2EwMi00YjhkLWFiN2UtZmEzZjBiYTY4MzA4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
   , 'https://app.powerbi.com/view?r=eyJrIjoiOTAxZTQyYWMtYTBjNS00YzMxLWFkYWUtMGQ0ZWVmYWJhYWFhIiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
@@ -84,3 +84,49 @@ btns.forEach(btn => {
 // updateDashLinks();
 
 
+// Function to update the countdown
+function updateCountdown(timer) {
+  let minutes = Math.floor(timer / 60);
+  let seconds = timer % 60;
+
+  // Display the countdown in the "countdown" div
+  document.getElementById('countdown').textContent = `Próxima troca: \n ${minutes}m ${seconds}s`;
+
+  // Check if the countdown has reached zero
+  if (timer === 0) {
+    return timer = timer / 1000;
+  } else {
+    // Decrease the countdown time by 1 second
+    return timer-1;
+  }
+}
+
+async function updateDashLinks() {
+  x = 0;
+
+  while (!stopLoop) {
+    let countdownTime = dashLibrary.circleTime[x] / 1000;
+
+    if(x === dashLibrary.link.length){
+      x = 0;
+    } else if (!dashLibrary.circleTrough[x]) {
+      x++;
+    } else {
+      dashIframe.setAttribute("src", `${dashLibrary.link[x]}`);
+      
+      countdownTime = updateCountdown(countdownTime);
+      
+      // Call the updateCountdown function again every second
+      setInterval(function () {
+        countdownTime = updateCountdown(countdownTime);
+      }, 1000);
+      
+      // Use a delay function (in this case, using setTimeout)
+      await new Promise(resolve => setTimeout(resolve, dashLibrary.circleTime[x]));
+
+      x++;
+    }
+  }
+}
+// Call the function to start the loop
+updateDashLinks();
