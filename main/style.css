@@ -323,3 +323,14 @@ height: 100%;
   box-sizing: border-box;
   align-items: flex-start;
 }
+
+.dot {
+  width: 100px;
+  height: auto;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  margin-left: 50%;
+  margin-top: 45%;
+  z-index: 1;
+}
