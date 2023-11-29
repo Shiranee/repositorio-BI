@@ -108,10 +108,6 @@ button b {
 }
 /* Main page dashboard selector */
 
-/* Button Gallery */
-
-/* Button Gallery */
-
 /* Main Page Content Table */
 #title-1 {
   width: 800px;
@@ -264,7 +260,6 @@ height: 100%;
 
 #wrapper {
   width: 95%;
-  /* max-width: 964px; */
   position: relative;
   left: 2.5%;
   right: 2.5%;
@@ -325,9 +320,12 @@ height: 100%;
   position: absolute;
   text-align: center;
   white-space: pre-line;
-  font-weight: bold;
   right: 0vh;
   margin-top: 0.5%;
+}
+
+#countdown::first-line {
+  font-weight: bold;
 }
 
 .dot {
@@ -335,4 +333,5 @@ height: 100%;
   z-index: 1;
   bottom: 1%;
   right: 50%;
+  font-weight: bold;
 }

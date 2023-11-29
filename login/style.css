@@ -15,18 +15,30 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial;
-  justify-content: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .login {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  /* align-items: center; */
+  /* justify-content: space-between; */
   width: 100%;
   max-width: 400px;
-  min-height: 100vh;
+  height: auto;
   padding: clamp(35px, 8%, 70px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 9vh;
+  background-color: rgb(221, 218, 218);
 }
 
 .login-wrapper {
