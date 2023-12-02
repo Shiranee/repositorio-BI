@@ -1,8 +1,19 @@
 let dashLibrary = {
-  name: ['Dashboard E-commerce', 'Personal Shoppers E-commerce', 'Produto E-Commerce', 'Acompanhamento Influencers', 'Supervisão Varejo', 'Diretoria Varejo', 'Ranking Outlets', 'Ranking Lps', 'Ranking Studios', 'Ranking Franquias']
-, image:['/images/char 11.png', '/images/char 11.png', '/images/char 11.png']
-, circleTrough:[true, true, true]
-, circleTime: [1000000, 5000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
+  name: [
+    'Dashboard E-commerce'
+  , 'Personal Shoppers E-commerce'
+  , 'Produto E-Commerce'
+  , 'Acompanhamento Influencers'
+  , 'Supervisão Varejo'
+  , 'Diretoria Varejo'
+  , 'Ranking Outlets'
+  , 'Ranking Lps'
+  , 'Ranking Studios'
+  , 'Ranking Franquias'
+]
+  , image:['/images/char 11.png', '/images/char 11.png', '/images/char 11.png']
+, circleTrough:[true, true, true, true, true]
+, circleTime: [1005000, 5000, 5000, 6000, 7000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
 , link: [
     'https://app.powerbi.com/view?r=eyJrIjoiMjgxYzA2ZTAtY2EwMi00YjhkLWFiN2UtZmEzZjBiYTY4MzA4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
   , 'https://app.powerbi.com/view?r=eyJrIjoiOTAxZTQyYWMtYTBjNS00YzMxLWFkYWUtMGQ0ZWVmYWJhYWFhIiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
@@ -43,7 +54,6 @@ while (x < dashLibrary.link.length) {
 
   // Append the button to the body or another container element
   carouselContent.appendChild(newButton);
-  carouselContent.appendChild(newButton);
   x++;
 }
 
@@ -53,17 +63,47 @@ let timeCounter = document.getElementById('countdown');
 let intervalId;
 let stopLoop = false;
 
-const changeDashboard = function (newLink) {
-  dashIframe.setAttribute("src", newLink);
-}
-
 btns.forEach(btn => {
   btn.addEventListener('click', () => {
     stopLoop = true;
-    // console.log(`clicked`)
     clearInterval(intervalId);
     timeCounter.textContent = '';
   });
+});
+
+const changeDashboard = function (newLink) {
+  // Encode the link to ensure it's a valid URL parameter
+  const encodedLink = encodeURIComponent(newLink);
+
+  // Check if already on dashboard.html
+  if (!window.location.pathname.includes('dashboard.html')) {
+    // Redirect to dashboard.html with the new link as a parameter
+    window.location.href = `dashboard.html?dashboardLink=${encodedLink}&stopLoop=true`;
+  } else {
+    // If already on dashboard.html, update the iframe directly
+    dashIframe.setAttribute('src', newLink);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  // let dashIframe = document.querySelector('.dash-page');
+  let urlParams = new URLSearchParams(window.location.search);
+  let encodedLink = urlParams.get('dashboardLink');
+  let stopLoopFlag = urlParams.get('stopLoop');
+
+  if (stopLoopFlag === 'true') {
+    stopLoop = true;
+    clearInterval(intervalId);
+    timeCounter.textContent = '';
+  }
+
+  if (encodedLink) {
+    // Decode the link to get the original URL
+    let newLink = decodeURIComponent(encodedLink);
+    
+    // Assuming dashIframe is the iframe on dashboard.html
+    dashIframe.setAttribute('src', newLink);
+  }
 });
 
 // Function to update the countdown
