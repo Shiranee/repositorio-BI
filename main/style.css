@@ -365,7 +365,7 @@ label::before{
   border: 10px solid transparent;
   border-left:15px solid white;
 }
-label{
+.c label{
   cursor: pointer;
   position: relative;
   display: flex;
@@ -379,21 +379,17 @@ div.p{
   /* background-color: white; */
   /* box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2); */
 }
-/* div.p p {
-  padding:2em;
-} */
+
 input:checked ~ h1 label::before{
   border-left:10px solid transparent;
   border-top:15px solid white;
   margin-top:12px;
   margin-right:10px;
+  
 }
 input:checked ~ h1 ~ div.p{
   max-height:1000px;
 }
-/* a{
-  color:steelblue;
-} */
 
 li {
   list-style: none;

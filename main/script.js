@@ -1,19 +1,16 @@
 let dashLibrary = {
   name: [
-    'Dashboard E-commerce'
-  , 'Personal Shoppers E-commerce'
-  , 'Produto E-Commerce'
-  , 'Acompanhamento Influencers'
-  , 'Supervisão Varejo'
-  , 'Diretoria Varejo'
-  , 'Ranking Outlets'
-  , 'Ranking Lps'
-  , 'Ranking Studios'
-  , 'Ranking Franquias'
-]
-  , image:['/images/char 11.png', '/images/char 11.png', '/images/char 11.png']
-  , circleTrough:[true, true, true, true, true]
-  , circleTime: [5000, 5000, 5000, 6000, 7000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
+      'Dashboard E-commerce'
+    , 'Personal Shoppers E-commerce'
+    , 'Produto E-Commerce'
+    , 'Acompanhamento Influencers'
+    , 'Supervisão Varejo'
+    , 'Diretoria Varejo'
+    , 'Ranking Outlets'
+    , 'Ranking Lps'
+    , 'Ranking Studios'
+    , 'Ranking Franquias'
+  ]
   , link: [
       'https://app.powerbi.com/view?r=eyJrIjoiMjgxYzA2ZTAtY2EwMi00YjhkLWFiN2UtZmEzZjBiYTY4MzA4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
     , 'https://app.powerbi.com/view?r=eyJrIjoiOTAxZTQyYWMtYTBjNS00YzMxLWFkYWUtMGQ0ZWVmYWJhYWFhIiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
@@ -26,6 +23,9 @@ let dashLibrary = {
     , 'https://app.powerbi.com/view?r=eyJrIjoiYWE3ZjUwNGMtMmM3ZS00YjM1LWI4YWUtZTNkNjc1NWVjMmM4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
     , 'https://app.powerbi.com/view?r=eyJrIjoiMjgxYzA2ZTAtY2EwMi00YjhkLWFiN2UtZmEzZjBiYTY4MzA4IiwidCI6IjFlZDE4MWUzLWJjNTQtNDAyYi1hZTBmLTI1NDk1NjZmZjMxNSJ9'
   ]
+  , image:['/images/char 11.png', '/images/char 11.png', '/images/char 11.png']
+  , circleTrough:[true, true, true, true, true]
+  , circleTime: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000]
 };
 
 let x = 0;
